@@ -1,0 +1,75 @@
+.subscribe {
+  margin-bottom: 100px;
+  &-container {
+    position: relative;
+  }
+  &-main {
+    background: #fff4f4;
+    border-radius: 20px;
+    padding: 60px 190px 70px;
+    position: relative;
+  }
+  &-heading {
+    text-align: center;
+  }
+  &-form {
+    margin-top: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 30px;
+  }
+  &-input {
+    padding: 20px 154px 20px 36px;
+    border: 1px solid #eee;
+    outline: none;
+    background: #ffffff;
+    box-shadow: 3px 10px 23px rgba(135, 110, 110, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+  }
+  &-input:focus {
+    border-color: $primary-color;
+  }
+  &-image--top {
+    position: absolute;
+    top: 77px;
+    left: 0;
+    z-index: 10;
+  }
+  &-image--bottom {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    z-index: 10;
+  }
+  @media screen and (max-width: 1023.98px) {
+    &-main {
+      padding: 30px 40px;
+    }
+    &-heading {
+      font-size: 36px;
+    }
+    &-image--top {
+      width: 100px;
+      left: 15px;
+    }
+    &-image--bottom {
+      width: 100px;
+      right: 15px;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    margin-bottom: 80px;
+    &-form {
+      flex-direction: column;
+      gap: 20px 0;
+    }
+    &-input {
+      padding: 15px 60px;
+    }
+    &-image--bottom {
+      bottom: 150px;
+    }
+  }
+}

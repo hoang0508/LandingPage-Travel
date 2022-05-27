@@ -1,0 +1,73 @@
+.holiday {
+  margin-top: 300px;
+  margin-bottom: 100px;
+  position: relative;
+  &-heading {
+    max-width: 561px;
+    width: 100%;
+  }
+  &-list {
+    margin-top: 62px;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-gap: 0 45px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+  }
+  &-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s linear;
+    cursor: pointer;
+    margin: 0 calc(45px / 2);
+  }
+  &-item:hover {
+    transform: translateY(-7px);
+  }
+  &-image {
+    height: 330px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-content {
+    padding: 27px 30px 52px;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid #eee;
+  }
+  &-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 21px;
+  }
+  // note
+  &-location > svg + * {
+    margin-left: 10px;
+  }
+  &-coin {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-price {
+    font-size: 28px;
+    color: $primary-color;
+    font-weight: 600;
+  }
+  &-rating {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+  @media screen and (max-width: 767.98px) {
+    margin-top: 250px;
+  }
+}

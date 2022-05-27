@@ -1,0 +1,98 @@
+.discounts {
+  margin-bottom: 108px;
+  &-desc {
+    max-width: 479px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  &-list {
+    margin-top: 62px;
+    margin-bottom: 74px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0 35px;
+  }
+  &-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  &-image {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s linear;
+    height: 330px;
+    // height: 0;
+    padding-bottom: calc((9 / 16) * 100%);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // object-fit: fill;
+    }
+  }
+  &-image:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+  }
+  &-price {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #fff;
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 100rem;
+    padding: 9px 17px;
+  }
+  &-now {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .button--book:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+  @media screen and (max-width: 1023.98px) {
+    margin-bottom: 80px;
+    &-list {
+      display: grid;
+      justify-content: flex-start;
+      grid-auto-columns: 300px;
+      grid-auto-flow: column;
+      grid-gap: 0 35px;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+      grid-template-columns: unset;
+    }
+    &-list::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    &-list > * {
+      scroll-snap-align: start;
+    }
+  }
+  &-heading {
+    font-size: 40px;
+  }
+  &-image {
+    height: 250px;
+  }
+}

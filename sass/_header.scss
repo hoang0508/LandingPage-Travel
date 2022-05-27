@@ -1,0 +1,113 @@
+.header {
+  margin-top: 40px;
+  margin-bottom: 106px;
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-menu {
+    display: flex;
+    align-items: center;
+    gap: 0 44px;
+  }
+  &-list {
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+    position: relative;
+  }
+  &-item {
+    position: relative;
+  }
+  &-link {
+    color: $gray-dark;
+    font-weight: 600;
+  }
+  &-link::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: $primary-color;
+    bottom: -10px;
+    transition: all 0.3s linear;
+  }
+  &-link:hover {
+    color: $primary-color;
+  }
+  &-link:hover::after {
+    width: 100%;
+    transition: all 0.3s linear;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .menu-close {
+    display: none;
+  }
+  @media screen and (max-width: 1023.98px) {
+    &-list {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      // background-color: #fff;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      margin-top: 0;
+      z-index: 40;
+      // transform: translateX(100%);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 3s linear;
+      &.is-show {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &-link {
+      color: #fff;
+      font-size: 18px;
+    }
+    &-menu {
+      grid-gap: 0 20px;
+      position: relative;
+    }
+    .menu-toggle {
+      display: block;
+      font-size: 25px;
+      color: $gray-dark;
+    }
+    .menu-close {
+      font-size: 25px;
+      color: #fff;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 40;
+      &.is-close {
+        display: inline-block;
+      }
+    }
+    &-bg {
+      width: 50px;
+      height: 50px;
+      border-radius: 100rem;
+      background-color: $primary-color;
+      position: fixed;
+      transform: translateX(-12px);
+      transform: scale(0);
+      z-index: 20;
+      transition: all 1.5s ease;
+      &.is-active {
+        transform: scale(100);
+      }
+    }
+  }
+}

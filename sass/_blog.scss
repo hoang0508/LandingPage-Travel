@@ -1,0 +1,84 @@
+.blog {
+  margin-bottom: 100px;
+  &-list {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 75px;
+    padding-bottom: 74px;
+  }
+  &-image {
+    margin-bottom: 31px;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &-title {
+    line-height: 155%;
+  }
+  &-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &-author {
+    position: relative;
+    padding-right: 10px;
+    :after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: $gray-light;
+    }
+    span {
+      color: $gray-dark;
+      font-weight: 500;
+    }
+  }
+  &-date {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+  @media screen and (max-width: 1023.98px) {
+    &-list {
+      display: grid;
+      justify-content: flex-start;
+      grid-auto-columns: 325px;
+      grid-auto-flow: column;
+      grid-gap: 0 35px;
+      overflow: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      -webkit-overflow-scrolling: touch;
+      scroll-padding: 1rem;
+      grid-template-columns: unset;
+    }
+    &-list::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+    &-list > * {
+      scroll-snap-align: start;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    &-image {
+      height: 250px;
+    }
+    &-list {
+      margin-top: 30px;
+    }
+  }
+}
